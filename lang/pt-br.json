@@ -5,7 +5,7 @@
     "lang.error": "Essa linguagem não está disponivel no nosso sistema\n**Linguagens disponivéis:** ***[langs]***",
     "dice.result": "Resultados:\n✨ **Total: [total]**\n📐 Equação: [equation]\n🎲 Dados:\n[dices]",
     "dice.error": "Não consegui entender sua equação!",
-    "dice.tts": "[name] tirou [result] no dado",
+    "dice.tts": "[name] tirou [result]",
     "tts.cantJoin": "Eu não posso entrar nesse canal de voz!",
     "tts.noConnect": "Você não está em nenhum canal de voz!",
     "tts.success": "✅ O TTS foi **ativado**!",
