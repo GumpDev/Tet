@@ -36,7 +36,7 @@
 
 
 ### Getting Started
-Just [Click here](https://discord.com/oauth2/authorize?client_id=751260506995818606&scope=bot&permissions=502426744&response_type=code) to invite Tet to your server.
+Just [Click here](https://discord.com/oauth2/authorize?client_id=751260506995818606&scope=bot&permissions=502426744) to invite Tet to your server.
 
 
 
