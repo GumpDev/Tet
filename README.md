@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="https://pm1.narvii.com/6503/e769048624290353062e752de824513d938344bc_00.jpg" width="150px" height="150px">
+    75<img src="https://pm1.narvii.com/6503/e769048624290353062e752de824513d938344bc_00.jpg" width="175px" height="150px">
     <h5 align="center"><b>Tet, The god of games</b></h5>
     <p align="center">an open-source RPG discord bot</p>
 </p>
@@ -58,5 +58,37 @@ The default prefix is '.', to get help type '.help'<br/>
         <td>Roll a dice, with operations</td>
         <td>None</td>
     </tr>
+    <tr>
+        <td>TTS</td>
+        <td>tts</td>
+        <td>[on|off]</td>
+        <td>Turn on or off the TTS in your voice channel, will narrate dice and others commands</td>
+        <td>ADMINISTRATOR</td>
+    </tr>
+    <tr>
+        <td>Say</td>
+        <td>say, voice, falar, voz</td>
+        <td>[Message]</td>
+        <td>Say the message in voice, but only if TTS is on</td>
+        <td>SEND_TTS_MESSAGES</td>
+    </tr>
+    <tr>
+        <td>Change Language</td>
+        <td>lang, language, linguagem, idioma</td>
+        <td>[Avalable Languages](pt-br|en-us)</td>
+        <td>Change the bot language in your server</td>
+        <td>ADMINISTRATOR</td>
+    </tr>
 </table>
-for more details [Click Here](https://github.com/GumpFlash/Tet/wiki) to access the wiki!
+for more details <a href="https://github.com/GumpFlash/Tet/wiki">Click Here</a> to access the wiki!
+
+
+
+### Contribute
+Submit your PR to help us be better, even if it's minor changes, don't be afraid
+to understand the code <a href="https://github.com/GumpFlash/Tet/wiki">Click Here</a> to access the wiki!
+
+
+
+### Translate
+Help us and translate Tet to your language, just go to folder 'lang' and create a json to your language, like 'pt-BR.json' translate the sentences and submit your PR.
