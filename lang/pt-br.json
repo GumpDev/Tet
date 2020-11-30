@@ -1,0 +1,17 @@
+{
+    "noCommand": "⛔ Nenhum comando foi encontrado! Digite '[prefix]ajuda' para obter ajuda.",
+    "noPermission": "⛔ Você não tem permissão para executar esse comando!",
+    "lang.changed": "✅ Linguagem foi trocada!",
+    "lang.error": "Essa linguagem não está disponivel no nosso sistema\n**Linguagens disponivéis:** ***[langs]***",
+    "dice.result": "Resultados:\n✨ **Total: [total]**\n📐 Equação: [equation]\n🎲 Dados:\n[dices]",
+    "dice.error": "Não consegui entender sua equação!",
+    "dice.tts": "[name] tirou [result] no dado",
+    "tts.cantJoin": "Eu não posso entrar nesse canal de voz!",
+    "tts.noConnect": "Você não está em nenhum canal de voz!",
+    "tts.success": "✅ O TTS foi **ativado**!",
+    "tts.leave": "✅ O TTS foi **desativado**!",
+    "tts.noChannel": "O TTS não está ativado, digite '[prefix]tts on' para ativar!",
+    "tts.alreadyEnable": "O TTS já está ativado, digite '[prefix]tts off' para desativar!",
+    "tts.help": "❓ Como usar o TTS: \n **Ativar:** [prefix]tts on \n **Desativar:** [prefix]tts off \n **Falar:** [prefix]falar (mensagem)",
+    "say.said": "🗣️ [content]"
+}
