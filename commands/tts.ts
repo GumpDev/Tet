@@ -1,5 +1,6 @@
 import Command      from '../classes/Command';
 import discordTTS   from "discord-tts";
+import {createWriteStream} from 'fs';
 import { Client, Message } from 'discord.js';
 import Language from '../classes/Language';
 
@@ -18,7 +19,8 @@ export default new Command(
                 }
                 if(voiceChannel){
                     var connection = await voiceChannel.join();
-                    if(connection) resolve(Language.getWord(msg.guild.id,"tts.success"))
+                    if(connection)
+                        resolve(Language.getWord(msg.guild.id,"tts.success")); 
                     else err(Language.getWord(msg.guild.id,"tts.cantJoin"))
                 }else err(Language.getWord(msg.guild.id,"tts.noConnect"))
             }else if(["off","desativar","desativo","desligar","unactive"].includes(args[0])){

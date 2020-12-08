@@ -2,6 +2,7 @@ import Command      from '../classes/Command';
 import { evaluate } from "mathjs";
 import { Client, Message } from 'discord.js';
 import Language from '../classes/Language';
+import Voice from '../classes/Voice';
 const discordTTS = require("discord-tts");
 
 const regex  = new RegExp("d[0-9]*","gm");
@@ -40,12 +41,10 @@ export default new Command(
             if(typeof(resultado) == "number"){
                 const voice = msg.guild.me.voice;
                 if(voice){
-                    const broadcast = client.voice.createBroadcast();
-                    const connection = voice.connection;
-                    if(connection){
-                        broadcast.play(discordTTS.getVoiceStream(Language.getWord(msg.guild.id,"dice.tts").replace("[name]",msg.member.nickname).replace("[result]",resultado.toString()),Language.getLangTyped(msg.guild.id),1.5));
-                        const dispatcher = connection.play(broadcast,{ volume: 2 });
-                    }
+                    new Voice(client,msg.guild).play("./sounds/dice.mp3");
+                    setTimeout(() => {
+                        new Voice(client,msg.guild).say(Language.getWord(msg.guild.id,"dice.tts").replace("[name]",msg.member.nickname).replace("[result]",resultado.toString()))
+                    }, 950);
                 }
                 resolve(Language.getWord(msg.guild.id, "dice.result")
                     .replace("[total]",resultado.toString())

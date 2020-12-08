@@ -13,14 +13,14 @@
   "license": "ISC",
   "dependencies": {
     "@discordjs/opus": "^0.3.3",
-    "@types/mathjs": "^6.0.7",
+    "@types/mathjs": "^6.0.8",
     "@types/node": "^14.14.10",
-    "discord-tts": "^1.0.2",
+    "discord-tts": "^1.0.3",
     "discord.js": "^12.5.1",
     "dotenv": "^8.2.0",
     "ffmpeg": "0.0.4",
     "fluent-ffmpeg": "^2.1.2",
-    "mathjs": "^8.0.1",
-    "mongoose": "^5.10.18"
+    "mathjs": "^8.1.0",
+    "mongoose": "^5.11.5"
   }
 }
