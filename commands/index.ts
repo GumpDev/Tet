@@ -1,17 +1,6 @@
 import { Client, Message } from 'discord.js';
 import Language from '../classes/Language';
-import Command from '../classes/Command';
-import Dice from './dice';
-import Tts from './tts';
-import Say from './say';
-import Changelang from './changelang';
-
-const commands : Command[] = [
-    Dice,
-    Changelang,
-    Tts,
-    Say
-]
+import { commands } from './commands';
 
 export default function (client : Client){
     return {
