@@ -13,7 +13,12 @@ export default new Command(
     (client: Client, msg: Message, args: string[]) : Promise<string> => {
         return new Promise(async (resolve, err)=>{
             const voice = msg.guild.me.voice;
+            const voiceChannel = msg.member.voice.channel;
             if(voice){
+                if(voice.channel != voiceChannel){
+                    err(Language.getWord(msg.guild.id,"say.differentChannel"))
+                    return;
+                }
                 new Voice(client,msg.guild).say(args.join(" ")).then(r=>{
                     resolve(Language.getWord(msg.guild.id,"say.said").replace("[content]",args.join(" ")));
                 })
@@ -21,3 +26,4 @@ export default new Command(
         })
     }
 ).setPermissions("SEND_TTS_MESSAGES")
+.setDescription("say.description")

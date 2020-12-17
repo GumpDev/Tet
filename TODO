@@ -1,6 +1,13 @@
+TODO:
 - Comando Ajuda
+- Sistema de Live API, com sistema de mostrar o dado e tals
+- Colocar opções de TTS, tipo apenas musica, dado, say ou todos
+- Colocar mais sound effects
 - Sistema de Prefix personalizado cada server
+- Clima de musica - !clima (clima) | !clima add (clima)
 - Sistema de Mapa(com vida)
 - Sistema de Ficha
 - Sistema de Prescrição do Bot
 - Frases personalizadas no dados, tts e no negocio normal
+
+🟥

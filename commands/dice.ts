@@ -41,10 +41,11 @@ export default new Command(
             if(typeof(resultado) == "number"){
                 const voice = msg.guild.me.voice;
                 if(voice){
-                    new Voice(client,msg.guild).play("./sounds/dice.mp3");
-                    setTimeout(() => {
-                        new Voice(client,msg.guild).say(Language.getWord(msg.guild.id,"dice.tts").replace("[name]",msg.member.nickname).replace("[result]",resultado.toString()))
-                    }, 950);
+                    new Voice(client,msg.guild).play("./sounds/dice.mp3").then(t=>{
+                        setTimeout(() => {
+                            new Voice(client,msg.guild).say(Language.getWord(msg.guild.id,"dice.tts").replace("[name]",msg.member.nickname).replace("[result]",resultado.toString()))
+                        }, 950);
+                    }).catch(e=>{});
                 }
                 resolve(Language.getWord(msg.guild.id, "dice.result")
                     .replace("[total]",resultado.toString())
@@ -57,4 +58,4 @@ export default new Command(
                 err(Language.getWord(msg.guild.id,"dice.error"))
         })
     }
-)
+).setDescription("dice.description")

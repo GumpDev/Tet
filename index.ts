@@ -12,7 +12,7 @@ client.on('ready', () => {
 });
 
 client.on('message', async (msg : Message) => {
-    if(!msg.author.bot) Commands(client).executeHandle(msg,process.env.PREFIX);
+    if(!msg.author.bot) Commands(client).executeHandle(msg,process.env.PREFIX).catch(e=>console.error(e));
 });
 
 client.login(process.env.TOKEN);

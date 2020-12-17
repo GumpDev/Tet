@@ -1,8 +1,10 @@
 import { Client, Message, PermissionString } from 'discord.js';
+import Language from './Language';
 
 export default class Command{
     private alias : string[];
     private run : (client: Client, msg: Message, args: string[]) => Promise<string>;
+    private description : string;
     private permissions : PermissionString;
     
     constructor(alias : string[], run : (client: Client, msg: Message, args: string[]) => Promise<string>){
@@ -26,7 +28,16 @@ export default class Command{
         return this;
     }
 
+    setDescription(description : string){
+        this.description = description;
+        return this;
+    }
+
     getPermissions() : PermissionString{
         return this.permissions;
+    }
+
+    getDescription(serverId : string) : string{
+        return Language.getWord(serverId,this.description);
     }
 }

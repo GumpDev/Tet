@@ -13,11 +13,11 @@ export default new Command(
             if(["on","ativo","ativar","ligar","active"].includes(args[0])){
                 const voice = msg.guild.me.voice.channel;
                 const voiceChannel = msg.member.voice.channel;
-                if(voice == voiceChannel){
-                    err(Language.getWord(msg.guild.id,"tts.alreadyEnable").replace("[prefix]",process.env.PREFIX))
-                    return;
-                }
                 if(voiceChannel){
+                    if(voice == voiceChannel){
+                        err(Language.getWord(msg.guild.id,"tts.alreadyEnable").replace("[prefix]",process.env.PREFIX))
+                        return;
+                    }
                     var connection = await voiceChannel.join();
                     if(connection)
                         resolve(Language.getWord(msg.guild.id,"tts.success")); 
@@ -35,3 +35,4 @@ export default new Command(
         })
     }
 ).setPermissions("ADMINISTRATOR")
+.setDescription("tts.description")

@@ -1,11 +1,13 @@
 {
     "noCommand": "⛔ No commands were found! Type '[prefix]help' to get help.",
     "noPermission": "⛔ You are not allowed to run this command!",
+    "lang.description": "**Change Language** - `[alias] + (Avalible Languages)` - Change the Tet's Language",
     "lang.changed": "✅ Language has been changed!",
     "lang.error": "This language is not available in our system \n **Languages available:** ***[langs]***",
     "dice.result": "Results:\n✨ **Total: [total]**\n📐 Equation: [equation]\n🎲 Dices:\n[dices]",
     "dice.error": "I couldn't understand your equation!",
     "dice.tts": "[name] scored [result]",
+    "dice.description": "**Dice** - `[alias] + (Dice Equation)` - Roll a dice with dice equation!",
     "tts.cantJoin": "I can't get into that voice channel!",
     "tts.noConnect": "You are not on any voice channel!",
     "tts.success": "✅ The TTS is now **on**!",
@@ -13,5 +15,8 @@
     "tts.noChannel": "The TTS is off, type '[prefix]tts on' to active!",
     "tts.alreadyEnable": "O TTS is already on, type '[prefix]tts off' to desactive!",
     "tts.help": "❓ How to use TTS: \n **Enable:** [prefix]tts on \n **Disable:** [prefix]tts off \n **Speak:** [prefix]speak (message)",
-    "say.said": "🗣️ [content]"
+    "tts.description": "**TTS** - `[alias] + (on/off)` - Enable or Disable TTS on current voice channel!",
+    "say.said": "🗣️ [content]",
+    "say.differentChannel": "You are not on the same voice channel as Tet",
+    "say.description": "**Say** - `[alias] + (Message)` - Say the message in voice channel, only if TTS is enabled!"
 }

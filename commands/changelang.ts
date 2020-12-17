@@ -17,4 +17,5 @@ export default new Command(
                 err(Language.getWord(msg.guild.id,"lang.error").replace("[langs]",Language.getLangs().join(", ")));
         })
     }
-).setPermissions("ADMINISTRATOR");
+).setPermissions("ADMINISTRATOR")
+.setDescription("lang.description");
