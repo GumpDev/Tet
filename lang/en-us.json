@@ -1,6 +1,9 @@
 {
+    "or": "or",
     "noCommand": "⛔ No commands were found! Type '[prefix]help' to get help.",
     "noPermission": "⛔ You are not allowed to run this command!",
+    "help.description": "**Help** - `[alias]` - View all commands",
+    "help.view": "**Tet v[version]**\n*By GumpFlash*\n\nCommands:\n[commands]",
     "lang.description": "**Change Language** - `[alias] + (Avalible Languages)` - Change the Tet's Language",
     "lang.changed": "✅ Language has been changed!",
     "lang.error": "This language is not available in our system \n **Languages available:** ***[langs]***",
