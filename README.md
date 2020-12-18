@@ -52,6 +52,13 @@ The default prefix is '.', to get help type '.help'<br/>
         <th>Permission</th>
     </tr>
     <tr>
+        <td>Help</td>
+        <td>help, commands, ajuda, comandos</td>
+        <td></td>
+        <td>Show all commands you can execute</td>
+        <td>None</td>
+    </tr>
+    <tr>
         <td>Dice</td>
         <td>roll, dice, rolar, dado, 🎲</td>
         <td>[Dice operation](Send a dice equation, like: "3d20+4", will roll 3 d20 and add 4)</td>
