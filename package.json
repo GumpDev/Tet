@@ -21,6 +21,7 @@
     "ffmpeg": "0.0.4",
     "fluent-ffmpeg": "^2.1.2",
     "mathjs": "^8.1.0",
-    "mongoose": "^5.11.5"
+    "mongoose": "^5.11.5",
+    "socket.io": "^3.0.4"
   }
 }

@@ -1,0 +1,28 @@
+:root{
+    --background: #374B4A;
+    --secondBackground: #526760;
+    --primary: #a5a5c9;
+    --secondary: #88D9E6;
+    --accent: #C5FFFD;
+}
+
+*{
+    color: white !important;
+    scroll-behavior: smooth;
+}
+
+.primary{
+    color: var(--primary) !important;
+}
+
+.primary_bg{
+    color: var(--secondary) !important;
+}
+
+.navbar-brand{
+    margin-left: 15px;
+}
+
+body{
+    background-color: var(--background) !important;
+}
