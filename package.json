@@ -18,6 +18,7 @@
     "discord-tts": "^1.0.3",
     "discord.js": "^12.5.1",
     "dotenv": "^8.2.0",
+    "express": "^4.17.1",
     "ffmpeg": "0.0.4",
     "fluent-ffmpeg": "^2.1.2",
     "mathjs": "^8.1.0",

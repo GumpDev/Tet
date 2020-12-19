@@ -1,9 +1,18 @@
+import { readFileSync } from 'fs';
+
 export default class Stream{
     public static io : any;
     public static serverHandles : any = {};
     
     constructor(port){
-        const io = require("socket.io")(port, {
+        const expressApp = require("express")();
+        const https = require("https");
+        const secureServer = https.createServer({
+            key: readFileSync('./server.key'),
+            cert: readFileSync('./server.cert')
+        }, expressApp);
+
+        const io = require("socket.io")(secureServer, {
             cors: {
               origin: '*',
             }
@@ -20,6 +29,10 @@ export default class Stream{
             })
         });
         Stream.io = io;
+
+        secureServer.listen(port, () => {
+            console.log(`Stream Socket is listening in ${port}`);
+        })
         return this;
     }
 

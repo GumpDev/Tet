@@ -63,7 +63,7 @@
                 Dice.className = "";
         }
 
-        var socket = io("http://45.229.164.112:3355");
+        var socket = io("https://45.229.164.112:3355");
         socket.on("connect",()=>{
             const serverId = findGetParameter("serverId");
             if(!serverId) 
