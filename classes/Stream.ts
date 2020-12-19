@@ -7,6 +7,7 @@ export default class Stream{
     constructor(port){
         const expressApp = require("express")();
         const https = require("https");
+        https.globalAgent.options.rejectUnauthorized = false;
         const secureServer = https.createServer({
             key: readFileSync('./server.key'),
             cert: readFileSync('./server.cert')
