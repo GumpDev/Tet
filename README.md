@@ -26,6 +26,7 @@
 <ul>
     <li><a href="#getting-started">📃 Getting Started</a></li>
     <li><a href="#how-to-use">📚 How to Use</a></li>
+    <li><a href="#stream">🎥 Stream</a></li>
     <li><a href="https://github.com/GumpFlash/Tet/wiki">📖 Wiki</a></li>
     <li><a href="#contribute">👷 Contribute</a></li>
     <li><a href="#translate">💻 Translate</a></li>
@@ -88,6 +89,16 @@ The default prefix is '.', to get help type '.help'<br/>
     </tr>
 </table>
 for more details <a href="https://github.com/GumpFlash/Tet/wiki">Click Here</a> to access the wiki!
+
+
+
+### Stream
+You can display dice results in your livestream using Tet Stream System, just use the following URL:
+```
+   https://gumpflash.github.io/Tet/?serverId=(your server id)
+   //or you can make for each player
+   https://gumpflash.github.io/Tet/?serverId=(your server id)&userId=(user id)
+```
 
 
 
