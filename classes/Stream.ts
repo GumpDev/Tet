@@ -5,6 +5,7 @@ export default class Stream{
     public static serverHandles : any = {};
     
     constructor(port){
+        process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
         const expressApp = require("express")();
         const https = require("https");
         const secureServer = https.createServer({
