@@ -1,15 +1,15 @@
 import { readFileSync } from "fs";
-import https from 'https';
+import { createServer } from 'https';
 export default class Stream{
     public static io : any;
     public static serverHandles : any = {};
     
     constructor(port){
         const options = {
-            key: readFileSync('./certs/CA-key.pem').toString(),
-            cert: readFileSync('./certs/CA-cert.pem').toString()
+            key: readFileSync('./certs/key.pem').toString(),
+            cert: readFileSync('./certs/cert.pem').toString()
         }
-        https.createServer(options).listen(port);
+        const https = createServer(options);
         const io = require("socket.io")(https, {
             cors: {
               origin: '*',
@@ -27,6 +27,9 @@ export default class Stream{
             })
         });
         Stream.io = io;
+        https.listen(port,()=>{
+            console.log(`Stream Socket is listening ${port}`)
+        })
         return this;
     }
 
