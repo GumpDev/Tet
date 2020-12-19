@@ -1,7 +1,7 @@
 TODO:
-- Sistema de Live API, com sistema de mostrar o dado e tals
 - Colocar opções de TTS, tipo apenas musica, dado, say ou todos
 - Colocar mais sound effects
+- Colocar efeitos e customizações no Stream
 - Sistema de Prefix personalizado cada server
 - Clima de musica - !clima (clima) | !clima add (clima)
 - Sistema de Mapa(com vida)

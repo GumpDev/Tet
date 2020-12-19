@@ -10,6 +10,7 @@
     "dice.result": "Results:\n✨ **Total: [total]**\n📐 Equation: [equation]\n🎲 Dices:\n[dices]",
     "dice.error": "I couldn't understand your equation!",
     "dice.tts": "[name] scored [result]",
+    "dice.stream": "[name] scored",
     "dice.description": "**Dice** - `[alias] + (Dice Equation)` - Roll a dice with dice equation!",
     "tts.cantJoin": "I can't get into that voice channel!",
     "tts.noConnect": "You are not on any voice channel!",

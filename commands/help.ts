@@ -18,8 +18,10 @@ export default new Command(
                 if(msg.member.hasPermission(c.getPermissions())){
                     let alias = "";
                     c.getAlias(process.env.PREFIX).forEach((a,i)=>{
-                        if(i + 1 == c.getAlias(process.env.PREFIX).length) alias += ` ${Language.getWord(msg.guild.id,"or")} `;
-                        else if(i != 0) alias += ", ";
+                        if(c.getAlias(process.env.PREFIX).length != 1){
+                            if(i + 1 == c.getAlias(process.env.PREFIX).length) alias += ` ${Language.getWord(msg.guild.id,"or")} `;
+                            else if(i != 0) alias += ", ";
+                        }
                         alias += a;
                     });
                     commds += (commds!=""?"\n  ":"  ") + c.getDescription(msg.guild.id).replace("[alias]",alias);

@@ -6,12 +6,51 @@
     <title>Tet API</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 </head>
-<body>
-    
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+<body style="background-color: #00ff00 !important;">
+    <div id="dice">
+        <h1 id="dice_txt">Name</h1>
+        <h1 id="dice_number">20</h1>
+    </div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.0.4/socket.io.min.js"></script>
     <script src='main.js'></script>
+    <script>
+        var socket = io("http://localhost:3355");
+        socket.on("connect",()=>{
+            const serverId = findGetParameter("serverId");
+            if(!serverId) 
+                dice(true,{
+                    label: "ERROR",
+                    value: "Invalid ServerId"
+                });
+            else 
+                dice(false); 
+            socket.emit("setServer",serverId);
+        });
+        socket.on("dice",data=>{
+            data = JSON.parse(data);
+            const userId = findGetParameter("userId");
+            if(!userId || userId.includes(data.userId)){
+                dice(true,{
+                    label: data.label,
+                    value: data.value,
+                    timer: 5000
+                })
+            }
+        })
+        function findGetParameter(parameterName) {
+            var result = null,
+                tmp = [];
+            location.search
+                .substr(1)
+                .split("&")
+                .forEach(function (item) {
+                tmp = item.split("=");
+                if (tmp[0] === parameterName) result = decodeURIComponent(tmp[1]);
+                });
+            return result;
+        }
+    </script>
 </body>
 </html>

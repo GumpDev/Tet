@@ -10,6 +10,7 @@
     "dice.result": "Resultados:\n✨ **Total: [total]**\n📐 Equação: [equation]\n🎲 Dados:\n[dices]",
     "dice.error": "Não consegui entender sua equação!",
     "dice.tts": "[name] tirou [result]",
+    "dice.stream": "[name] tirou",
     "dice.description": "**Dados** - `[alias] + (Equação do dado)` - Gira um dado usando a equação feita!",
     "tts.cantJoin": "Eu não posso entrar nesse canal de voz!",
     "tts.noConnect": "Você não está em nenhum canal de voz!",
