@@ -8,9 +8,8 @@ export default class Stream{
         const expressApp = require("express")();
         const https = require("https");
         const secureServer = https.createServer({
-            key: readFileSync('./server.key'),
-            cert: readFileSync('./server.cert'),
-            ca: readFileSync('./ca.key')
+            key: readFileSync('./certs/selfsigned.key'),
+            cert: readFileSync('./certs/selfsigned.crt'),
         }, expressApp);
 
         const io = require("socket.io")(secureServer, {
