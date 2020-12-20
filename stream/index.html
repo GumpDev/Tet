@@ -53,9 +53,11 @@
             if(findGetParameter("displayTime"))
                 displayTime = parseFloat(findGetParameter("displayTime"));
             if(findGetParameter("fontColor")){
+                let color = findGetParameter("fontColor");
+                if(color.length == 6) color = "#" + color;
                 setTimeout(() => {
-                    document.getElementById("dice_txt").style.color = findGetParameter("fontColor");
-                    document.getElementById("dice_number").style.color = findGetParameter("fontColor");
+                    document.getElementById("dice_txt").style.color = color;
+                    document.getElementById("dice_number").style.color = color;
                 }, 500);
             }
         }

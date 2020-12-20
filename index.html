@@ -156,7 +156,7 @@
                 if(userId != "") url += `userId=${userId}&`;
                 if(backgroundImage != "") url += `backgroundImage=${backgroundImage}&`;
                 if(displayTime != "") url += `displayTime=${displayTime}&`;
-                if(fontColor != "") url += `fontColor=${fontColor}`;
+                if(fontColor != "") url += `fontColor=${fontColor.replace("#","")}`;
 
                 document.getElementById("streamURL").value = url;
             }else 
