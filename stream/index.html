@@ -7,27 +7,26 @@
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <style>
         *{
-            color: white !important;
+            color: white;
             scroll-behavior: smooth;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         #dice_txt{
             font-weight: 350;
-            transform: translateY(60px);
+            transform: translateY(30px);
         }
 
         #dice_number{
             font-size: 72px;
+            transform: translateY(-30px);
         }
-
         #dice{
             text-align: center;
             transition: .5s;
             opacity: 0;
             transform: scale(0,0);
         }
-
         #dice.active{
             opacity: 1;
             transform: scale(1,1);
@@ -45,6 +44,22 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.0.4/socket.io.min.js"></script>
     <script>
+        let displayTime = 5;
+        window.onload = () =>{
+            if(findGetParameter("backgroundImage")){
+                document.getElementById("dice").style.background = `url('${findGetParameter("backgroundImage")}') no-repeat center`;
+                document.getElementById("dice").style.backgroundSize = "auto 100%";
+            }
+            if(findGetParameter("displayTime"))
+                displayTime = parseFloat(findGetParameter("displayTime"));
+            if(findGetParameter("fontColor")){
+                setTimeout(() => {
+                    document.getElementById("dice_txt").style.color = findGetParameter("fontColor");
+                    document.getElementById("dice_number").style.color = findGetParameter("fontColor");
+                }, 500);
+            }
+        }
+
         function dice(show, options){
             const Dice = document.getElementById("dice");
             const DiceTxt = document.getElementById("dice_txt");
@@ -82,7 +97,7 @@
                 dice(true,{
                     label: data.label,
                     value: data.value,
-                    timer: 5000
+                    timer: displayTime * 1000
                 })
             }
         })
