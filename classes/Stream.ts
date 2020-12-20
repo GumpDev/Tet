@@ -1,16 +1,16 @@
-import { readFileSync } from "fs";
-import { createServer } from 'https';
+import { createServer } from 'http';
+import { readFileSync } from 'fs';
+
 export default class Stream{
     public static io : any;
     public static serverHandles : any = {};
     
     constructor(port){
-        const options = {
-            key: readFileSync('./certs/key.pem').toString(),
-            cert: readFileSync('./certs/cert.pem').toString()
-        }
-        const https = createServer(options);
-        const io = require("socket.io")(https, {
+        const http = createServer((req, res) => {
+            res.writeHead(200);
+            res.end(readFileSync("./stream/index.html"));
+        });
+        const io = require("socket.io")(http, {
             cors: {
               origin: '*',
             }
@@ -26,10 +26,10 @@ export default class Stream{
                 })
             })
         });
-        Stream.io = io;
-        https.listen(port,()=>{
-            console.log(`Stream Socket is listening ${port}`)
+        http.listen(port,()=>{
+            console.log(`Stream Socket listening ${port}`);
         })
+        Stream.io = io;
         return this;
     }
 
