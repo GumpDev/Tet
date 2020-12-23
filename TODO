@@ -1,8 +1,10 @@
+<<<<<<< HEAD
 TODO:
 - Arrumar negocio de HTTPS do Stream no Bot
+=======
+>>>>>>> d6fa635acc80d015d69c9fbad164479d84591a8a
 - Colocar opções de TTS, tipo apenas musica, dado, say ou todos
 - Colocar mais sound effects
-- Colocar efeitos e customizações no Stream
 - Sistema de Prefix personalizado cada server
 - Clima de musica - !clima (clima) | !clima add (clima)
 - Sistema de Mapa(com vida)

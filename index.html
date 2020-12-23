@@ -3,102 +3,167 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-    <title>Tet API</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>Tet, The god of games</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <style>
         *{
-            color: white !important;
-            scroll-behavior: smooth;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        #dice_txt{
-            font-weight: 350;
-            transform: translateY(60px);
-        }
-
-        #dice_number{
-            font-size: 72px;
-        }
-
-        #dice{
-            text-align: center;
-            transition: .5s;
-            opacity: 0;
-            transform: scale(0,0);
-        }
-
-        #dice.active{
-            opacity: 1;
-            transform: scale(1,1);
-        }
-        body{
-            background-color: var(--background) !important;
+            color: white;
+            scroll-behavior: smooth;
         }
     </style>
 </head>
-<body style="background-color: #00ff00 !important;">
-    <div id="dice">
-        <h1 id="dice_txt">Name</h1>
-        <h1 id="dice_number">20</h1>
+<body style="background-color: #2C2F33;"> 
+    <nav style="background: transparent; box-shadow: 0 0 0 !important; -webkit-box-shadow: 0 0 0 !important">
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo" style="margin-left: 25px; font-weight: 775;">Tet</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="#commands">Commands</a></li>
+                <li><a href="#stream">Stream</a></li>
+                <li><a href="https://github.com/GumpFlash/Tet">Open Source</a></li>
+                <li><a class="waves-effect waves-light btn" href="https://discord.com/oauth2/authorize?client_id=751260506995818606&scope=bot&permissions=502426744" target="_blank">Add on Discord</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div style="padding: 250px 0px; text-align: center;">
+        <img style="width: 350px; height: auto; margin-top: -100px; border-radius: 25px;" src="https://camo.githubusercontent.com/8af74aabef39d6bde214318072dcc879323d45c9fe9d9dc1fcff5b8b3bbcd212/68747470733a2f2f706d312e6e61727669692e636f6d2f363530332f653736393034383632343239303335333036326537353264653832343531336439333833343462635f30302e6a7067" />
+        <h1 style="font-weight: 775; margin-top: 0px;">Tet</h1>
+        <h4>The god of games</h4>
+        <p>An open source RPG bot for discord</p>
+        <p align="center">
+            <a alt="Discord Server">
+                <a href="https://discord.gg/4GYN6bV"><img src="https://discordapp.com/api/guilds/330547455273992202/embed.png" alt="Discord Server" /></a>
+            </a>
+            <a>
+                <img src="https://img.shields.io/twitch/status/gumpflash?color=%23c9459b">
+            </a>
+            <a>
+                <img src="https://img.shields.io/github/package-json/dependency-version/GumpFlash/tutorial-discord-bot/discord.js?color=%23c9459b">
+            </a>
+            <a alt="contributors">
+                <img src="https://img.shields.io/github/contributors/GumpFlash/Tet?color=%23c9459b&label=contributors" >
+            </a>
+        </p>
+    </div>
+    
+    <div id="commands" style="padding: 50px 25px;width: 95%;background-color: #23272A; border-radius: 25px; margin: 100px auto; text-align: center;">
+        <h3>Commands</h3>
+        <p>The default prefix is '.', to get help type '.help'</p><br/>
+
+        <table>
+            <tr>
+                <th>Command</th>
+                <th>Alias</th>
+                <th>Arguments</th>
+                <th>Description</th>
+                <th>Permission</th>
+            </tr>
+            <tr>
+                <td>Help</td>
+                <td>help, commands, ajuda, comandos</td>
+                <td></td>
+                <td>Show all commands you can execute</td>
+                <td>None</td>
+            </tr>
+            <tr>
+                <td>Dice</td>
+                <td>roll, dice, rolar, dado, 🎲</td>
+                <td>[Dice operation](Send a dice equation, like: "3d20+4", will roll 3 d20 and add 4)</td>
+                <td>Roll a dice, with operations</td>
+                <td>None</td>
+            </tr>
+            <tr>
+                <td>TTS</td>
+                <td>tts</td>
+                <td>[on|off]</td>
+                <td>Turn on or off the TTS in your voice channel, will narrate dice and others commands</td>
+                <td>ADMINISTRATOR</td>
+            </tr>
+            <tr>
+                <td>Say</td>
+                <td>say, voice, falar, voz</td>
+                <td>[Message]</td>
+                <td>Say the message in voice, but only if TTS is on</td>
+                <td>SEND_TTS_MESSAGES</td>
+            </tr>
+            <tr>
+                <td>Change Language</td>
+                <td>lang, language, linguagem, idioma</td>
+                <td>[Avalable Languages](pt-br|en-us)</td>
+                <td>Change the bot language in your server</td>
+                <td>ADMINISTRATOR</td>
+            </tr>
+        </table>
+        for more details <a href="https://github.com/GumpFlash/Tet/wiki">Click Here</a> to access the wiki!
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.0.4/socket.io.min.js"></script>
+    <div id="stream" style="padding: 50px 25px;width: 95%;background-color: #23272A; border-radius: 25px; margin: 100px auto; text-align: center;">
+        <h3>Stream</h3>
+        <p>Below you can create your URL to put in your Stream, where it will show the result of dice</p><br/>
+        <div class="row">
+            <form class="col s12">
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input id="serverId" onchange="generateURL()" type="text">
+                        <label for="serverId">Server Id</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <input id="userId" onchange="generateURL()" type="text">
+                        <label for="userId">User Id (Optional)</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input id="backgroundImage"  onchange="generateURL()" type="text">
+                        <label for="backgroundImage">Background Image (Optional)</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <input id="displayTime" onchange="generateURL()" type="number" value="5">
+                        <label for="displayTime">Display Time (Optional)</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input id="fontColor" onchange="generateURL()" type="text" value="ffffff">
+                        <label for="fontColor">Font color (Optional)</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div style="height: 50px;" />
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input readonly id="streamURL" type="text">
+                        <label for="streamURL">Stream URL</label>
+                    </div>
+                </div>
+            </form>
+          </div>
+    </div>
     <script>
-        function dice(show, options){
-            const Dice = document.getElementById("dice");
-            const DiceTxt = document.getElementById("dice_txt");
-            const DiceNumber = document.getElementById("dice_number");
+        function generateURL(){
+            const serverId          = document.getElementById("serverId").value;
+            const userId            = document.getElementById("userId").value;
+            const backgroundImage   = document.getElementById("backgroundImage").value;
+            const displayTime       = document.getElementById("displayTime").value;
+            const fontColor         = document.getElementById("fontColor").value;
 
-            if(show){
-                DiceTxt.innerText = options.label;
-                DiceNumber.innerText = options.value;
-                Dice.className = "active";
+            let url = "http://gumpservices.ddns.net:3355/?";
+            if(serverId != ""){
+                url += `serverId=${serverId}&`;
+                if(userId != "") url += `userId=${userId}&`;
+                if(backgroundImage != "") url += `backgroundImage=${backgroundImage}&`;
+                if(displayTime != "") url += `displayTime=${displayTime}&`;
+                if(fontColor != "") url += `fontColor=${fontColor.replace("#","")}`;
 
-                if(options.timer)
-                    setTimeout(() => {
-                        Dice.className = "";
-                    }, options.timer);
-            }else
-                Dice.className = "";
-        }
-
-        var socket = io("https://45.229.164.112:3355", {secure: true});
-        socket.on("connect",()=>{
-            const serverId = findGetParameter("serverId");
-            if(!serverId) 
-                dice(true,{
-                    label: "ERROR",
-                    value: "Invalid ServerId"
-                });
-            else 
-                dice(false); 
-            socket.emit("setServer",serverId);
-        });
-        socket.on("dice",data=>{
-            data = JSON.parse(data);
-            const userId = findGetParameter("userId");
-            if(!userId || userId.includes(data.userId)){
-                dice(true,{
-                    label: data.label,
-                    value: data.value,
-                    timer: 5000
-                })
-            }
-        })
-        function findGetParameter(parameterName) {
-            var result = null,
-                tmp = [];
-            location.search
-                .substr(1)
-                .split("&")
-                .forEach(function (item) {
-                tmp = item.split("=");
-                if (tmp[0] === parameterName) result = decodeURIComponent(tmp[1]);
-                });
-            return result;
+                document.getElementById("streamURL").value = url;
+            }else 
+                document.getElementById("streamURL").value = "";
         }
     </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </body>
 </html>

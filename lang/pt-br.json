@@ -2,7 +2,7 @@
     "or": "ou",
     "noCommand": "⛔ Nenhum comando foi encontrado! Digite '[prefix]ajuda' para obter ajuda.",
     "noPermission": "⛔ Você não tem permissão para executar esse comando!",
-    "help.description": "**Ajuda** - `[alias]` - Vizualiza todos os comandos",
+    "help.description": "**Ajuda** - `[alias]` - Mostra todos os comandos",
     "help.view": "**Tet v[version]**\n*Por GumpFlash*\n\nComandos:\n[commands]",
     "lang.description": "**Trocar Língua** - `[alias] + (Línguas Disponíveis)` - Troca a língua do Tet",
     "lang.changed": "✅ Linguagem foi trocada!",

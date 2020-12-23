@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Tet API</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <style>
+        *{
+            color: white;
+            scroll-behavior: smooth;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        #dice_txt{
+            font-weight: 350;
+            transform: translateY(30px);
+        }
+
+        #dice_number{
+            font-size: 72px;
+            transform: translateY(-30px);
+        }
+        #dice{
+            text-align: center;
+            transition: .5s;
+            opacity: 0;
+            transform: scale(0,0);
+        }
+        #dice.active{
+            opacity: 1;
+            transform: scale(1,1);
+        }
+        body{
+            background-color: var(--background) !important;
+        }
+    </style>
+</head>
+<body style="background-color: #00ff00 !important;">
+    <div id="dice">
+        <h1 id="dice_txt">Name</h1>
+        <h1 id="dice_number">20</h1>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.0.4/socket.io.min.js"></script>
+    <script>
+        let displayTime = 5;
+        window.onload = () =>{
+            if(findGetParameter("backgroundImage")){
+                document.getElementById("dice").style.background = `url('${findGetParameter("backgroundImage")}') no-repeat center`;
+                document.getElementById("dice").style.backgroundSize = "auto 100%";
+            }
+            if(findGetParameter("displayTime"))
+                displayTime = parseFloat(findGetParameter("displayTime"));
+            if(findGetParameter("fontColor")){
+                let color = findGetParameter("fontColor");
+                if(color.length == 6) color = "#" + color;
+                setTimeout(() => {
+                    document.getElementById("dice_txt").style.color = color;
+                    document.getElementById("dice_number").style.color = color;
+                }, 500);
+            }
+        }
+
+        function dice(show, options){
+            const Dice = document.getElementById("dice");
+            const DiceTxt = document.getElementById("dice_txt");
+            const DiceNumber = document.getElementById("dice_number");
+
+            if(show){
+                DiceTxt.innerText = options.label;
+                DiceNumber.innerText = options.value;
+                Dice.className = "active";
+
+                if(options.timer)
+                    setTimeout(() => {
+                        Dice.className = "";
+                    }, options.timer);
+            }else
+                Dice.className = "";
+        }
+
+        var socket = io(`http://${window.location.hostname}:3355`);
+        socket.on("connect",()=>{
+            const serverId = findGetParameter("serverId");
+            if(!serverId) 
+                dice(true,{
+                    label: "ERROR",
+                    value: "Invalid ServerId"
+                });
+            else 
+                dice(false); 
+            socket.emit("setServer",serverId);
+        });
+        socket.on("dice",data=>{
+            data = JSON.parse(data);
+            const userId = findGetParameter("userId");
+            if(!userId || userId.includes(data.userId)){
+                dice(true,{
+                    label: data.label,
+                    value: data.value,
+                    timer: displayTime * 1000
+                })
+            }
+        })
+        function findGetParameter(parameterName) {
+            var result = null,
+                tmp = [];
+            location.search
+                .substr(1)
+                .split("&")
+                .forEach(function (item) {
+                tmp = item.split("=");
+                if (tmp[0] === parameterName) result = decodeURIComponent(tmp[1]);
+                });
+            return result;
+        }
+    </script>
+</body>
+</html>
