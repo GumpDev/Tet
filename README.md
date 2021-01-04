@@ -95,9 +95,9 @@ for more details <a href="https://github.com/GumpFlash/Tet/wiki">Click Here</a> 
 ### Stream
 You can display dice results in your livestream using Tet Stream System, just use the following URL:
 ```
-   https://gumpflash.github.io/Tet/?serverId=(your server id)
+   http://deuterium.com.br:3355/?serverId=(your server id)
    //or you can make for each player
-   https://gumpflash.github.io/Tet/?serverId=(your server id)&userId=(user id)
+   http://deuterium.com.br:3355/?serverId=(your server id)&userId=(user id)
 ```
 
 
