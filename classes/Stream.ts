@@ -34,8 +34,9 @@ export default class Stream{
     }
 
     static send(serverId,data){
-        Stream.serverHandles[serverId].forEach(s=>{
-            s.emit("dice",JSON.stringify(data));
-        })
+        if(Stream.serverHandles[serverId])
+            Stream.serverHandles[serverId].forEach(s=>{
+                s.emit("dice",JSON.stringify(data));
+            })
     }
 }

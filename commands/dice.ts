@@ -48,11 +48,11 @@ export default new Command(
                         }, 950);
                     }).catch(e=>{});
                 }
-                /*Stream.send(msg.guild.id,{
+                Stream.send(msg.guild.id,{
                     userId: msg.author.id,
                     label: Language.getWord(msg.guild.id, "dice.stream").replace("[name]",msg.member.displayName),
                     value: resultado.toString()
-                })*/
+                })
                 resolve(Language.getWord(msg.guild.id, "dice.result")
                     .replace("[total]",resultado.toString())
                     .replace("[equation]",oldContent)
