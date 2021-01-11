@@ -39,7 +39,6 @@ export default new Command(
                     dice.push(result);
                 })
             const resultado = evaluate(content);
-            console.log(resultado);
             if(typeof(resultado) == "number"){
                 const voice = msg.guild.me.voice;
                 if(voice){
@@ -49,11 +48,11 @@ export default new Command(
                         }, 950);
                     }).catch(e=>{});
                 }
-                Stream.send(msg.guild.id,{
+                /*Stream.send(msg.guild.id,{
                     userId: msg.author.id,
                     label: Language.getWord(msg.guild.id, "dice.stream").replace("[name]",msg.member.displayName),
                     value: resultado.toString()
-                })
+                })*/
                 resolve(Language.getWord(msg.guild.id, "dice.result")
                     .replace("[total]",resultado.toString())
                     .replace("[equation]",oldContent)
