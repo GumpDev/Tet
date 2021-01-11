@@ -31,13 +31,6 @@ export default new Command(
                         str += x == 0 ? `d${d[1]}` : `+d${d[1]}`;
                     content = content.replace(d.join("d"),str);
                 })
-            if(content.match(regex))
-                content.match(regex).forEach(d=>{
-                    const result = Math.floor(Math.random() * parseInt(d.replace("d",""))) + 1;
-                    content = content.replace(d,result.toString());
-                    diceD.push(d);
-                    dice.push(result);
-                })
             const resultado = evaluate(content);
             if(typeof(resultado) == "number"){
                 const voice = msg.guild.me.voice;
