@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="https://pm1.narvii.com/6503/e769048624290353062e752de824513d938344bc_00.jpg" width="175px" height="150px">
+    <img src="tet.png" width="175px" height="150px">
     <h5 align="center"><b>Tet, The god of games</b></h5>
     <p align="center">an open-source RPG discord bot</p>
 </p>
